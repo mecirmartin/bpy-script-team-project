@@ -1,5 +1,10 @@
 import bpy
 
+def decimal_to_reversed_binary_list(number):
+    reversed_binary_list = [int(x) for x in bin(number)[2:]]
+    reversed_binary_list.reverse()
+    return reversed_binary_list
+
 def carve_out_with_object(main_object, carve_object):
     # Deselect all and select only main_object
     bpy.ops.object.select_all(action='DESELECT')
@@ -27,3 +32,5 @@ carve_out_with_object(big_cube, small_cube)
 #bpy.context.view_layer.objects.active = big_cube
 #bpy.context.object.modifiers["Boolean"].object = None
 #bpy.ops.object.modifier_apply(modifier="Boolean")
+
+
